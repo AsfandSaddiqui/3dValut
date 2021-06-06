@@ -1,8 +1,9 @@
 {
   "name": "three-js-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is 3d Vault",
   "main": "scripts.js",
+  "homepage": "tempsite.rf.gd",
   "scripts": {
     "start": "node index.js"
   },

@@ -1,6 +1,6 @@
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera( 35, window.innerWidth/window.innerHeight, 0.1, 1000 );
+var camera = new THREE.PerspectiveCamera( 26, window.innerWidth/window.innerHeight, 0.1, 1000 );
 camera.position.set(0,0,60);
 
 var renderer = new THREE.WebGLRenderer();
@@ -26,15 +26,16 @@ scene.add(fillLight);
 scene.add(backLight);
 
 var mtlLoader = new THREE.MTLLoader();
-mtlLoader.setTexturePath('/examples/3d-obj-loader/assets/');
-mtlLoader.setPath('/examples/3d-obj-loader/assets/');
+mtlLoader.setTexturePath('/assets/');
+mtlLoader.setPath('/assets/');
 mtlLoader.load('valut.mtl', function (materials) {
 
     materials.preload();
 
+
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
-    objLoader.setPath('/examples/3d-obj-loader/assets/');
+    objLoader.setPath('/assets/');
     objLoader.load('valut.obj', function (object) {
 
         scene.add(object);
@@ -42,7 +43,7 @@ mtlLoader.load('valut.mtl', function (materials) {
 
     });
 
-});
+} );
 
 var animate = function () {
 	requestAnimationFrame( animate );
